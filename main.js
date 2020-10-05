@@ -1,8 +1,9 @@
 let Phrase = require("mseal-palindrome");
 
-let string = prompt("please enter a string for palindrome testing");
 
-let phrase= new Phrase(string);
+function palindromeTester() {
+    let string = prompt("please enter a string for palindrome testing");
+    let phrase= new Phrase(string);
 
 if (phrase.palindrome()){
     alert(`"${phrase.content}" is a palindrome`);
@@ -10,5 +11,10 @@ if (phrase.palindrome()){
         alert(`"${phrase.content}" is not a palindrome`);
         
     }
+}
 
-ok
+
+document.addEventListener("DOMContentLoaded", function(){
+   let button = document.querySelector("#palindromeTester");
+    button.addEventListener("click", palindromeTester); 
+});
